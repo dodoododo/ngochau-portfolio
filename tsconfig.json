@@ -5,7 +5,9 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "noUnusedLocals": false,      // Tắt kiểm tra biến local thừa
+    "noUnusedParameters": false
   },
   "files": [],
   "references": [
