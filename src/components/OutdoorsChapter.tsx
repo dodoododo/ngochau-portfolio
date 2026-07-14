@@ -10,7 +10,7 @@ export default function OutdoorsChapter() {
       {/* --- BACKGROUND LAYER --- */}
       <div className="absolute inset-0 z-0 opacity-15">
         <img 
-          src="src/assets/outdoors/travel-blog-background.png" 
+          src="/outdoors/travel-blog-background.png" 
           alt="Background texture" 
           className="w-full h-full object-cover"
         />
@@ -51,7 +51,7 @@ export default function OutdoorsChapter() {
           <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             <div className="relative w-full md:w-10/12 ml-auto aspect-[4/5] bg-[#EBE9E0] border-[8px] border-white shadow-sm z-10">
               <img 
-                src="src/assets/outdoors/hop-scotch.jpg" 
+                src="/outdoors/hop-scotch.jpg" 
                 alt={o.spreadOne.altHopscotch} 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -59,7 +59,7 @@ export default function OutdoorsChapter() {
             </div>
             <div className="absolute -bottom-12 -left-6 md:-left-16 w-2/3 aspect-[3/2] bg-[#EBE9E0] border-[6px] border-white shadow-md z-20 -rotate-2">
               <img 
-                src="src/assets/outdoors/horizontal-ship.jpg" 
+                src="/outdoors/horizontal-ship.jpg" 
                 alt={o.spreadOne.altHorizontalShip} 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -72,7 +72,7 @@ export default function OutdoorsChapter() {
         <div className="relative mb-12 md:mb-12 border-t border-[#2B3028]/10 pt-16">
           <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-[#EBE9E0] overflow-hidden mb-12">
             <img 
-              src="src/assets/outdoors/fake-ass-beach.jpg" 
+              src="/outdoors/fake-ass-beach.jpg" 
               alt={o.spreadTwo.altPanorama} 
               className="w-full h-full object-cover object-center"
               loading="lazy"
@@ -92,7 +92,7 @@ export default function OutdoorsChapter() {
             <div className="md:col-span-7 grid grid-cols-2 gap-4 md:gap-6">
               <div className="w-full aspect-square bg-[#EBE9E0] border-[6px] border-white shadow-sm mt-8 md:mt-12 rotate-1">
                 <img 
-                  src="src/assets/outdoors/terra-gate.jpg" 
+                  src="/outdoors/terra-gate.jpg" 
                   alt={o.spreadTwo.altTerraGate} 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -100,7 +100,7 @@ export default function OutdoorsChapter() {
               </div>
               <div className="w-full aspect-[3/4] bg-[#EBE9E0] border-[6px] border-white shadow-sm -rotate-2">
                 <img 
-                  src="src/assets/outdoors/buddha-beach.jpg" 
+                  src="/outdoors/buddha-beach.jpg" 
                   alt={o.spreadTwo.altBuddhaBeach} 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -124,7 +124,7 @@ export default function OutdoorsChapter() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="w-full aspect-square bg-[#EBE9E0] border-[6px] border-white shadow-sm">
                <img 
-                 src="src/assets/outdoors/currency.jpg" 
+                 src="/outdoors/currency.jpg" 
                  alt={o.spreadThree.altCurrency} 
                  className="w-full h-full object-cover"
                  loading="lazy"
@@ -132,7 +132,7 @@ export default function OutdoorsChapter() {
             </div>
             <div className="w-full aspect-square bg-[#EBE9E0] border-[6px] border-white shadow-sm sm:mt-12">
                <img 
-                 src="src/assets/outdoors/goose.jpg" 
+                 src="/outdoors/goose.jpg" 
                  alt={o.spreadThree.altGoose} 
                  className="w-full h-full object-cover"
                  loading="lazy"
@@ -140,7 +140,7 @@ export default function OutdoorsChapter() {
             </div>
             <div className="w-full aspect-square bg-[#EBE9E0] border-[6px] border-white shadow-sm sm:mt-4">
                <img 
-                 src="src/assets/outdoors/fireworks.jpg" 
+                 src="/outdoors/fireworks.jpg" 
                  alt={o.spreadThree.altFireworks} 
                  className="w-full h-full object-cover"
                  loading="lazy"
@@ -155,7 +155,7 @@ export default function OutdoorsChapter() {
           <div className="md:col-span-5 relative">
             <div className="w-full aspect-[4/5] bg-[#EBE9E0] border-[8px] border-slate-700 shadow-sm -rotate-1">
                <img 
-                 src="src/assets/outdoors/coffee-hill.jpg" 
+                 src="/outdoors/coffee-hill.jpg" 
                  alt={o.spreadFour.altCoffeeHill} 
                  className="w-full h-full object-cover"
                  loading="lazy"
@@ -174,7 +174,7 @@ export default function OutdoorsChapter() {
             <div className="flex gap-4 md:gap-6 items-start">
               <div className="w-1/2 aspect-[4/3] bg-[#EBE9E0] border-[4px] border-slate-700 shadow-sm mt-8">
                 <img 
-                  src="src/assets/outdoors/hill-top.jpg" 
+                  src="/outdoors/hill-top.jpg" 
                   alt={o.spreadFour.altHillTop} 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -182,7 +182,7 @@ export default function OutdoorsChapter() {
               </div>
               <div className="w-1/2 aspect-[4/3] bg-[#EBE9E0] border-[4px] border-slate-700 shadow-sm">
                 <img 
-                  src="src/assets/outdoors/hill-sea.jpg" 
+                  src="/outdoors/hill-sea.jpg" 
                   alt={o.spreadFour.altHillSea} 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -207,7 +207,7 @@ export default function OutdoorsChapter() {
             <div className="lg:col-span-6">
               <div className="w-full aspect-[16/9] bg-[#EBE9E0] border-[6px] border-white shadow-sm rotate-1">
                 <img 
-                  src="src/assets/outdoors/rasp-cafe.jpe" 
+                  src="/outdoors/rasp-cafe.jpe" 
                   alt={o.spreadFive.altRaspCafe} 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -219,7 +219,7 @@ export default function OutdoorsChapter() {
           <div className="grid grid-cols-3 gap-3 md:gap-6">
             <div className="w-full aspect-square bg-[#EBE9E0] border-[4px] border-white shadow-sm">
               <img 
-                src="src/assets/outdoors/niu-fish.jpg" 
+                src="/outdoors/niu-fish.jpg" 
                 alt={o.spreadFive.altNiuFish} 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -227,7 +227,7 @@ export default function OutdoorsChapter() {
             </div>
             <div className="w-full aspect-square bg-[#EBE9E0] border-[4px] border-white shadow-sm mt-4 md:mt-8">
               <img 
-                src="src/assets/outdoors/shiba.jpg" 
+                src="/outdoors/shiba.jpg" 
                 alt={o.spreadFive.altShiba} 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -235,7 +235,7 @@ export default function OutdoorsChapter() {
             </div>
             <div className="w-full aspect-square bg-[#EBE9E0] border-[4px] border-white shadow-sm mt-8 md:mt-16 flex items-center justify-center text-center">
               <img 
-                src="src/assets/outdoors/nckh.jpg" 
+                src="/outdoors/nckh.jpg" 
                 alt={o.spreadFive.altNckh} 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -251,7 +251,7 @@ export default function OutdoorsChapter() {
             <div className="bg-[#E27D60] p-10 md:p-16 text-[#FDFBF7] shadow-sm relative">
               <div className="absolute -top-16 right-6 w-28 md:w-40 aspect-square bg-[#EBE9E0] border-[4px] border-white shadow-md rotate-6">
                 <img 
-                  src="src/assets/outdoors/rock-cactus.jpg" 
+                  src="/outdoors/rock-cactus.jpg" 
                   alt={o.spreadSix.altRockCactus} 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -273,7 +273,7 @@ export default function OutdoorsChapter() {
           <div className="lg:col-span-7 order-1 lg:order-2">
             <div className="w-full h-full md:aspect-[16/10] bg-[#EBE9E0] overflow-hidden  border-[4px] border-slate-700">
               <img
-                src="src/assets/outdoors/sanrio.jpg"
+                src="/outdoors/sanrio.jpg"
                 alt={o.spreadSix.altSanrio}
                 className="w-full h-full object-cover object-[50%_20%]"
                 loading="lazy"

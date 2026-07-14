@@ -116,7 +116,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Like a Holland Lop, you'll win people over just by being yourself.",
     colorA: "#f7cd8e",
     colorB: "#fbe6c8",
-    imageUrl: "src/assets/bunnyGacha/holland-lop.jpg",
+    imageUrl: "/bunnyGacha/holland-lop.jpg",
     type: "Companion",
     personality: "Sweet",
     ability: "Ear Flop Charm",
@@ -131,7 +131,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "A burst of unexpected energy helps you finish what you start today.",
     colorA: "#cbd3d8",
     colorB: "#eef0f1",
-    imageUrl: "src/assets/bunnyGacha/netherland-dwarf.jpg",
+    imageUrl: "/bunnyGacha/netherland-dwarf.jpg",
     type: "Speedster",
     personality: "Spicy",
     ability: "Zoomie Tornado",
@@ -146,7 +146,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Your hair might be messy today, but your spirit is majestic.",
     colorA: "#f4d873",
     colorB: "#fbeec2",
-    imageUrl: "src/assets/bunnyGacha/lionhead.jpg",
+    imageUrl: "/bunnyGacha/lionhead.jpg",
     type: "Majestic",
     personality: "Proud",
     ability: "Mane Defense",
@@ -161,7 +161,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "A good long nap solves more problems than hard work today.",
     colorA: "#c9c2b6",
     colorB: "#ece7dd",
-    imageUrl: "src/assets/bunnyGacha/flemish-giant.jpg",
+    imageUrl: "/bunnyGacha/flemish-giant.jpg",
     type: "Titan",
     personality: "Gentle",
     ability: "Professional Napper",
@@ -176,7 +176,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Things go smoothly for you today, much like velvet.",
     colorA: "#f0a7a0",
     colorB: "#fbdcd8",
-    imageUrl: "src/assets/bunnyGacha/mini-rex.jpg",
+    imageUrl: "/bunnyGacha/mini-rex.jpg",
     type: "Companion",
     personality: "Placid",
     ability: "Velvet Touch",
@@ -191,7 +191,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Expect a day filled with soft comforts and a little extra grooming.",
     colorA: "#e2e8f0",
     colorB: "#ffffff",
-    imageUrl: "src/assets/bunnyGacha/english-angora.jpg",
+    imageUrl: "/bunnyGacha/english-angora.jpg",
     type: "Divine",
     personality: "Pampered",
     ability: "Cloud Camouflage",
@@ -206,7 +206,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Balance is your strength today. Keep things split right down the middle.",
     colorA: "#3f3f46",
     colorB: "#71717a",
-    imageUrl: "src/assets/bunnyGacha/dutch.jpg",
+    imageUrl: "/bunnyGacha/dutch.jpg",
     type: "Classic",
     personality: "Balanced",
     ability: "Tuxedo Elegance",
@@ -221,7 +221,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "You will leave a striking impression on someone new today.",
     colorA: "#f1f5f9",
     colorB: "#cbd5e1",
-    imageUrl: "src/assets/bunnyGacha/californian.jpg",
+    imageUrl: "/bunnyGacha/californian.jpg",
     type: "Classic",
     personality: "Chill",
     ability: "Thermal Adaptation",
@@ -236,7 +236,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "A sense of humor will get you out of a tricky situation today.",
     colorA: "#fdba74",
     colorB: "#334155",
-    imageUrl: "src/assets/bunnyGacha/harlequin.jpg",
+    imageUrl: "/bunnyGacha/harlequin.jpg",
     type: "Trickster",
     personality: "Playful",
     ability: "Split Persona",
@@ -251,7 +251,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Take a deep breath. A calm approach will yield the best results.",
     colorA: "#e5e5e5",
     colorB: "#a3a3a3",
-    imageUrl: "src/assets/bunnyGacha/himalayan.jpg",
+    imageUrl: "/bunnyGacha/himalayan.jpg",
     type: "Zen",
     personality: "Calm",
     ability: "Cylinder Stretch",
@@ -266,7 +266,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "You may magically pull a solution out of thin air today.",
     colorA: "#292524",
     colorB: "#44403c",
-    imageUrl: "src/assets/bunnyGacha/polish.jpg",
+    imageUrl: "/bunnyGacha/polish.jpg",
     type: "Magical",
     personality: "Alert",
     ability: "Hat Trick",
@@ -281,7 +281,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "You will outshine the competition today without even trying.",
     colorA: "#fda4af",
     colorB: "#fed7aa",
-    imageUrl: "src/assets/bunnyGacha/satin.jpg",
+    imageUrl: "/bunnyGacha/satin.jpg",
     type: "Radiant",
     personality: "Diva",
     ability: "Light Refraction",
@@ -296,7 +296,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "A rare and unique opportunity is heading your way.",
     colorA: "#64748b",
     colorB: "#334155",
-    imageUrl: "src/assets/bunnyGacha/silver-fox.jpg",
+    imageUrl: "/bunnyGacha/silver-fox.jpg",
     type: "Rare",
     personality: "Mysterious",
     ability: "Stand-Up Fur",
@@ -311,7 +311,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Someone will appreciate your quiet kindness (and your style).",
     colorA: "#ffffff",
     colorB: "#e2e8f0",
-    imageUrl: "src/assets/bunnyGacha/blanc-de-hotot.jpg",
+    imageUrl: "/bunnyGacha/blanc-de-hotot.jpg",
     type: "Classic",
     personality: "Observer",
     ability: "Eyeliner Gaze",
@@ -326,7 +326,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Unexpected snacks may find their way to you today.",
     colorA: "#fde68a",
     colorB: "#fef08a",
-    imageUrl: "src/assets/bunnyGacha/mini-lop.jpg",
+    imageUrl: "/bunnyGacha/mini-lop.jpg",
     type: "Companion",
     personality: "Cuddly",
     ability: "Basketball Roll",
@@ -341,7 +341,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "A peaceful resolution to a small conflict is in your future.",
     colorA: "#dbeafe",
     colorB: "#e0e7ff",
-    imageUrl: "src/assets/bunnyGacha/jersey-wooly.jpg",
+    imageUrl: "/bunnyGacha/jersey-wooly.jpg",
     type: "Divine",
     personality: "Mug-Sized",
     ability: "No-Kick Zone",
@@ -356,7 +356,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Your social energy will bring a smile to someone who needs it.",
     colorA: "#d1fae5",
     colorB: "#ccfbf1",
-    imageUrl: "src/assets/bunnyGacha/american-fuzzy-lop.jpg",
+    imageUrl: "/bunnyGacha/american-fuzzy-lop.jpg",
     type: "Companion",
     personality: "Social",
     ability: "Wool Blanket",
@@ -371,7 +371,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "You'll breeze through your tasks with impressive speed today.",
     colorA: "#d4d4d8",
     colorB: "#a1a1aa",
-    imageUrl: "src/assets/bunnyGacha/checkered-giant.jpg",
+    imageUrl: "/bunnyGacha/checkered-giant.jpg",
     type: "Speedster",
     personality: "Active",
     ability: "Racing Stripes",
@@ -386,7 +386,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Sometimes fading into the background allows you to see the most.",
     colorA: "#78350f",
     colorB: "#44403c",
-    imageUrl: "src/assets/bunnyGacha/havana.jpg",
+    imageUrl: "/bunnyGacha/havana.jpg",
     type: "Rare",
     personality: "Smooth",
     ability: "Shadow Blend",
@@ -401,7 +401,7 @@ export const BUNNY_DATABASE: BunnyProfile[] = [
     blurb: "Your sharp instincts will guide you to a clever solution.",
     colorA: "#ea580c",
     colorB: "#1c1917",
-    imageUrl: "src/assets/bunnyGacha/tan.jpg",
+    imageUrl: "/bunnyGacha/tan.jpg",
     type: "Speedster",
     personality: "Alert",
     ability: "Doberman Stance",
@@ -2493,7 +2493,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
         {/* PAPER GRAIN */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-multiply z-0"
-          style={{ backgroundImage: "url('src/assets/bunnyMagazine/paper-texture.jpg')", backgroundSize: "cover" }}
+          style={{ backgroundImage: "url('/bunnyMagazine/paper-texture.jpg')", backgroundSize: "cover" }}
         />
         {/* HALFTONE PRINT DOTS */}
         <div
@@ -2533,7 +2533,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
             {/* Image 1: Bóng đổ sâu chân thực (Deep 3D Shadow) */}
             <div className="hidden sm:block absolute top-[-2%] right-[40%] w-[160px] h-[200px] sm:w-[200px] sm:h-[260px] rotate-[8deg] z-20 cursor-pointer">
               <img 
-                src="src/assets/bunnyMagazine/sitting-bunny.png" 
+                src="/bunnyMagazine/sitting-bunny.png" 
                 className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform" 
                 alt="Wild Bunny" 
               />
@@ -2542,7 +2542,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
             {/* Image 2: Bóng đổ gắt màu đỏ phong cách Pop-Art */}
             <div className="hidden sm:block absolute top-[40%] right-[30%] w-[220px] h-[180px] rotate-[-6deg] z-10 cursor-pointer">
               <img 
-                src="src/assets/bunnyMagazine/gasp-bunny.png" 
+                src="/bunnyMagazine/gasp-bunny.png" 
                 className="w-full h-full object-contain grayscale-[15%] drop-shadow-[6px_6px_0_#c21807] hover:-translate-y-2 transition-transform" 
                 alt="Macro Bunny" 
               />
@@ -2551,7 +2551,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
             {/* Image 3: Hiệu ứng hình dán (Sticker) với viền trắng + bóng mờ */}
             <div className="hidden sm:block absolute bottom-[1%] right-[1%] w-[150px] h-[150px] rotate-[8deg] z-30 cursor-pointer">
               <img 
-                src="src/assets/bunnyMagazine/bed-bunny.png" 
+                src="/bunnyMagazine/bed-bunny.png" 
                 className="w-full h-full object-contain drop-shadow-[0_0_3px_#fff] drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] hover:rotate-0 transition-transform" 
                 alt="Cute Bunny" 
               />
@@ -2560,7 +2560,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
             {/* Image 4: Hiệu ứng đường viền đen sắc nét như truyện tranh */}
             <div className="hidden sm:block absolute bottom-[1%] left-[45%] w-[150px] h-[140px] z-20 cursor-pointer">
               <img 
-                src="src/assets/bunnyMagazine/glasses-bunny.png" 
+                src="/bunnyMagazine/glasses-bunny.png" 
                 className="w-full h-full object-contain drop-shadow-[0_0_2px_#1b1b1b] drop-shadow-[4px_4px_0_#1b1b1b] hover:scale-110 transition-transform" 
                 alt="Curious Bunny" 
               />
@@ -2569,7 +2569,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
             {/* Image 5: Bóng đổ gắt màu Vàng Nghệ (rất hợp với tạp chí hoang dã) */}
             <div className="hidden sm:block absolute top-[-5%] right-[22%] w-[300px] h-[300px] z-30 cursor-pointer">
               <img 
-                src="src/assets/bunnyMagazine/2-bunnies.png" 
+                src="/bunnyMagazine/2-bunnies.png" 
                 className="w-full h-full object-contain drop-shadow-[8px_8px_0_#e0d28b] drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-2 transition-transform" 
                 alt="Curious Bunny" 
               />
@@ -2578,7 +2578,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
             {/* Image 6: Hiệu ứng viền phát sáng (Glow) nhẹ nhàng */}
             <div className="hidden sm:block absolute bottom-[-2%] right-[28%] w-[180px] h-[180px] z-20 cursor-pointer">
               <img 
-                src="src/assets/bunnyMagazine/sleeping-holland.png" 
+                src="/bunnyMagazine/sleeping-holland.png" 
                 className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)] hover:scale-105 transition-transform" 
                 alt="Curious Bunny" 
               />
@@ -2639,7 +2639,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
               style={{ clipPath: TORN_A }}
             >
               <img
-                src="src/assets/bunnyMagazine/lily-bunny.png"
+                src="/bunnyMagazine/lily-bunny.png"
                 alt="Hero Bunny"
                 className="w-full h-auto object-contain drop-shadow-[10px_16px_16px_rgba(0,0,0,0.4)] bg-[#e8e4d8]"
               />
@@ -2649,7 +2649,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 frameless, just no room to bleed over type at this width */}
             <div className="sm:hidden relative mt-8 w-[68%] mx-auto rotate-[-2deg]" style={{ clipPath: TORN_A }}>
               <img
-                src="src/assets/bunnyMagazine/lily-bunny.png"
+                src="/bunnyMagazine/lily-bunny.png"
                 alt="Hero Bunny"
                 className="w-full h-auto object-contain drop-shadow-[8px_12px_14px_rgba(0,0,0,0.4)] bg-[#e8e4d8]"
               />
@@ -2718,7 +2718,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                   <div className="relative w-[180px] sm:w-[320px] lg:w-[380px] rotate-[8deg] z-20 group">
 
                     <img
-                      src="src/assets/bunnyMagazine/bunny-hop.png"
+                      src="/bunnyMagazine/bunny-hop.png"
                       alt="Bunny mid-hop"
                       className="w-full h-auto object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.4)] transition-transform duration-300 group-hover:scale-105"
                     />
@@ -2735,7 +2735,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     <div className="absolute -top-4 left-1/2 z-30 h-6 w-20 -translate-x-1/2 -rotate-3 bg-[#c21807]/80" />
 
                     <img
-                      src="src/assets/bunnyMagazine/binky.jpg"
+                      src="/bunnyMagazine/binky.jpg"
                       alt="Bunny Binky"
                       className="w-full h-auto object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.4)] transition-transform duration-300 group-hover:scale-105"
                     />
@@ -2755,7 +2755,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
               {/* Radar Bunny - Absolute/Overlapping left */}
               <div className="relative w-[220px] sm:w-[280px] rotate-[6deg] z-20 md:-ml-12 cursor-pointer">
                 <img
-                  src="src/assets/bunnyMagazine/kiwi-bunny.png"
+                  src="/bunnyMagazine/kiwi-bunny.png"
                   alt="Bunny radar ears"
                   className="w-full h-auto object-contain drop-shadow-[0_15px_20px_rgba(0,0,0,0.35)] hover:-translate-y-2 transition-transform"
                 />
@@ -2786,13 +2786,13 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 
                 {/* Carrot Background Decor */}
                 <div className="absolute top-0 left-0 w-[180px] rotate-[15deg] opacity-40 z-0">
-                  <img src="src/assets/bunnyMagazine/carrot-cutout.png" alt="Carrot" className="w-full h-auto object-contain" />
+                  <img src="/bunnyMagazine/carrot-cutout.png" alt="Carrot" className="w-full h-auto object-contain" />
                 </div>
 
                 {/* Bunny 1: Alert Stance */}
                 <div className="absolute bottom-[2%] left-[2%] w-[200px] sm:w-[300px] rotate-[-5deg] z-20 cursor-pointer">
                   <img
-                    src="src/assets/bunnyMagazine/knife-bunny.png"
+                    src="/bunnyMagazine/knife-bunny.png"
                     alt="Bunny alert"
                     className="w-full h-auto object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] hover:scale-110 transition-transform"
                   />
@@ -2801,7 +2801,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 {/* Bunny 2: Foraging (Overlapping Bunny 1) */}
                 <div className="absolute top-[15%] right-[5%] w-[180px] sm:w-[280px] rotate-[8deg] z-30 cursor-pointer">
                   <img
-                    src="src/assets/bunnyMagazine/lettuce-bunny.png"
+                    src="/bunnyMagazine/lettuce-bunny.png"
                     alt="Bunny foraging"
                     className="w-full h-auto object-contain drop-shadow-[-10px_15px_15px_rgba(0,0,0,0.4)] hover:-translate-y-3 transition-transform"
                   />
@@ -2810,7 +2810,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 {/* Bunny 3: Sitting calmly (Peeking from behind) */}
                 <div className="absolute top-[5%] left-[25%] w-[160px] sm:w-[200px] rotate-[-12deg] z-10 opacity-90 cursor-pointer">
                   <img
-                    src="src/assets/bunnyMagazine/sitting-bunny.png"
+                    src="/bunnyMagazine/sitting-bunny.png"
                     alt="Sitting bunny"
                     className="w-full h-auto object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]"
                   />
@@ -2904,7 +2904,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
               style={{ clipPath: TORN_BLOB }}
             >
               <img
-                src="src/assets/bunnyMagazine/glasses-bunny.png"
+                src="/bunnyMagazine/glasses-bunny.png"
                 alt="Specimen bunny"
                 className="w-full h-full object-cover contrast-125 drop-shadow-[6px_10px_12px_rgba(0,0,0,0.45)]"
               />
@@ -2955,7 +2955,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     style={{ clipPath: TORNS[i % TORNS.length] }}
                   >
                     <img
-                      src={`src/assets/bunnyMagazine/${b.src}`}
+                      src={`/bunnyMagazine/${b.src}`}
                       alt={b.label}
                       className="w-full h-full object-cover drop-shadow-[4px_6px_8px_rgba(0,0,0,0.8)]"
                     />
@@ -3071,7 +3071,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                         {sb.sonicRadar.burjLabel}
                       </span>
                       <img 
-                        src="src/assets/bunnyMagazine/burj-khalifa.png" 
+                        src="/bunnyMagazine/burj-khalifa.png" 
                         alt="Burj Khalifa" 
                         className="h-full w-auto object-contain drop-shadow-[4px_4px_0_rgba(0,0,0,0.15)]"
                       />
@@ -3083,7 +3083,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                         {sb.sonicRadar.eiffelLabel}
                       </span>
                       <img 
-                        src="src/assets/bunnyMagazine/eiffel-tower.png" 
+                        src="/bunnyMagazine/eiffel-tower.png" 
                         alt="Eiffel Tower" 
                         className="h-full w-auto object-contain drop-shadow-[2px_2px_0_rgba(0,0,0,0.15)]"
                       />
@@ -3095,7 +3095,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                         {sb.sonicRadar.libertyLabel}
                       </span>
                       <img 
-                        src="src/assets/bunnyMagazine/statue-of-liberty.png" 
+                        src="/bunnyMagazine/statue-of-liberty.png" 
                         alt="Statue of Liberty" 
                         className="h-full w-auto object-contain drop-shadow-[1px_1px_0_rgba(0,0,0,0.15)]"
                       />
@@ -3115,7 +3115,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
               {/* 1. Grass Base (Z-index 10) - Natural image border, no rigid frame */}
               <div className="absolute bottom-0 left-0 right-0 pointer-events-none md:translate-y-[120px]">
                 <img 
-                  src="src/assets/bunnyMagazine/grass-texture.png" 
+                  src="/bunnyMagazine/grass-texture.png" 
                   alt="Grass Texture" 
                   className="w-full h-auto object-contain object-bottom drop-shadow-[0_-4px_10px_rgba(0,0,0,0.15)]"
                 />
@@ -3123,7 +3123,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
 
               {/* 2. The Listener: Bunny on the left (Z-index 20, stands ON grass) */}
               <img
-                src="src/assets/bunnyMagazine/hare-cutout.png"
+                src="/bunnyMagazine/hare-cutout.png"
                 alt="Listening bunny"
                 className="absolute left-[3%] sm:left-[8%] bottom-[60px] sm:bottom-[80px] w-[80px] md:w-[110px] sm:w-[100px] h-auto object-contain drop-shadow-[0_20px_15px_rgba(255,255,255,0.8)] z-20 hover:scale-105 transition-transform"
               />
@@ -3137,7 +3137,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 
                 {/* Wolf Image (Flipped horizontally to face the bunny) */}
                 <img
-                  src="src/assets/bunnyMagazine/wolf-cutout.png"
+                  src="/bunnyMagazine/wolf-cutout.png"
                   alt="Hungry wolf"
                   className="w-[100px] md:w-[160px] sm:w-[120px] h-auto object-contain drop-shadow-[0_20px_15px_rgba(255,255,255,0.8)] hover:scale-105 transition-transform"
                 />
@@ -3175,7 +3175,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     {[1, 2, 3].map((i) => (
                       <div key={i} className="relative w-[28.57%] aspect-square flex items-center justify-center">
                         <img 
-                          src="src/assets/bunnyMagazine/burj-khalifa.png" 
+                          src="/bunnyMagazine/burj-khalifa.png" 
                           alt="Burj unit" 
                           className="absolute w-full h-full object-contain rotate-90 opacity-80 drop-shadow-[0_6px_6px_rgba(0,0,0,0.4)]" 
                         />
@@ -3186,7 +3186,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     <div className="relative w-[14.28%] aspect-[1/2] overflow-hidden flex items-center">
                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[200%] aspect-square flex items-center justify-center">
                           <img 
-                            src="src/assets/bunnyMagazine/burj-khalifa.png" 
+                            src="/bunnyMagazine/burj-khalifa.png" 
                             alt="Half Burj unit" 
                             className="absolute w-full h-full object-contain rotate-90 opacity-80 drop-shadow-[0_6px_6px_rgba(0,0,0,0.4)]" 
                           />
@@ -3224,7 +3224,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 {/* Hunter Eye Overlay */}
                 <div 
                   className="absolute inset-0 opacity-20 mix-blend-screen bg-no-repeat bg-center bg-cover"
-                  style={{ backgroundImage: "url('src/assets/bunnyMagazine/hunter-eyes.jpg')" }}
+                  style={{ backgroundImage: "url('/bunnyMagazine/hunter-eyes.jpg')" }}
                 />
                 
                 <div className="pointer-events-none select-none absolute -right-6 -top-10 font-sans font-black text-[9rem] sm:text-[13rem] leading-none text-[#c21807]/30">
@@ -3240,7 +3240,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 {/* Prey Eye Overlay */}
                 <div 
                   className="absolute inset-0 opacity-50 mix-blend-multiply bg-no-repeat bg-center bg-cover"
-                  style={{ backgroundImage: "url('src/assets/bunnyMagazine/prey-eyes.jpg')" }}
+                  style={{ backgroundImage: "url('/bunnyMagazine/prey-eyes.jpg')" }}
                 />
                 
                 <div className="pointer-events-none select-none absolute -left-6 -bottom-10 font-serif italic text-[9rem] sm:text-[13rem] leading-none text-[#1b4332]/40">
@@ -3283,7 +3283,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#c21807] to-[#3a2323] shadow-[0_0_0_2px_rgba(244,240,230,0.15)]" style={{ clipPath: JAGGED_CIRCLE }} />
                     <div className="absolute inset-[4px] bg-[#1b1b1b] overflow-hidden flex items-center justify-center" style={{ clipPath: JAGGED_CIRCLE }}>
                       <img 
-                        src="src/assets/bunnyMagazine/hunter-animals.png" 
+                        src="/bunnyMagazine/hunter-animals.png" 
                         alt="The Hunter"
                         className="w-full h-full object-cover"
                       />
@@ -3332,7 +3332,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#87e738] to-[#1b4332] shadow-[0_0_0_2px_rgba(27,27,27,0.15)]" style={{ clipPath: SCALLOP_CIRCLE }} />
                     <div className="absolute inset-[4px] bg-[#1b1b1b] overflow-hidden flex items-center justify-center" style={{ clipPath: SCALLOP_CIRCLE }}>
                       <img 
-                        src="src/assets/bunnyMagazine/prey-animals.png" 
+                        src="/bunnyMagazine/prey-animals.png" 
                         alt="The Prey"
                         className="w-full h-full object-cover"
                       />
@@ -3459,7 +3459,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
 
                     {/* LAYER 3: THE REAL BUNNY (Embedded inside SVG to fix Z-index) */}
                     <image 
-                      href="src/assets/bunnyMagazine/bunny-top.png" 
+                      href="/bunnyMagazine/bunny-top.png" 
                       x="60" y="70" width="400" height="400" 
                       className="pointer-events-none drop-shadow-[0_20px_20px_rgba(0,0,0,0.6)]"
                       style={{ transformOrigin: '250px 250px', transform: 'rotate(-95deg) translate(15px, -10px)' }}
