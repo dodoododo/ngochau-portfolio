@@ -1,0 +1,184 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--bg-base);
+  --color-foreground: var(--ink);
+  --color-bg-base: var(--bg-base);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+  --color-muted-fg: var(--muted-fg);
+  --color-bunny-bg: var(--bunny-bg);
+  --color-bunny-text: var(--bunny-text);
+  --color-bunny-soft: var(--bunny-soft);
+  --color-outdoor-bg: var(--outdoor-bg);
+  --color-globe-bg: var(--globe-bg);
+
+  --color-border: var(--card-border);
+  --color-input: var(--card-border);
+  --color-ring: var(--accent);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--bg-base);
+  --color-secondary: var(--muted);
+  --color-secondary-foreground: var(--ink);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: #ffffff;
+  --color-card: #ffffff;
+  --color-card-foreground: var(--ink);
+  --color-popover: #ffffff;
+  --color-popover-foreground: var(--ink);
+
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ========================================================
+   CẤU HÌNH FONT TIẾNG VIỆT
+   Chỉ kích hoạt khi thẻ html có thuộc tính lang="vi"
+======================================================== */
+html[lang="vi"] .font-serif {
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* Nếu bạn có dùng thẻ tiêu đề h1->h6 mà bị lỗi font, nó cũng sẽ được sửa */
+html[lang="vi"] h1,
+html[lang="vi"] h2,
+html[lang="vi"] h3,
+html[lang="vi"] h4,
+html[lang="vi"] h5,
+html[lang="vi"] h6 {
+  font-family: 'Playfair Display', serif !important;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Warm Precision palette */
+  --bg-base: #faf9f6;
+  --ink: #1a1a1a;
+  --accent: #f97316;
+  --accent-soft: #fef3ea;
+  --card-border: #e7e4dd;
+  --muted: #f1efe9;
+  --muted-fg: #6b6b64;
+
+  /* Bunny chapter shift */
+  --bunny-bg: #fff0f6;
+  --bunny-text: #b83280;
+  --bunny-soft: #ffe4ee;
+
+  /* Outdoor chapter */
+  --outdoor-bg: #eef3ec;
+
+  /* Globe chapter (deliberate dark moment) */
+  --globe-bg: #0f0f0e;
+}
+
+.dark {
+  /* Site is intentionally light-mode-first; keep parity */
+  --bg-base: #faf9f6;
+  --ink: #1a1a1a;
+}
+
+@layer base {
+  * {
+    border-color: var(--card-border);
+  }
+  html,
+  body {
+    background-color: var(--bg-base);
+    color: var(--ink);
+    font-family: "Geist Variable", sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 25%, transparent);
+  }
+  /* Áp dụng cho Firefox trên toàn trang */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #f97316 white;
+  }
+  
+  /* Áp dụng cho Chrome, Edge, Safari trên toàn bộ các thẻ có scroll */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2; /* h-2 để chỉnh cả thanh cuộn ngang nếu có */
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-white;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-orange-500 rounded-full border-2 border-white; /* Thêm tí border trắng cho xịn */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-orange-600;
+  }
+}
+
+@layer utilities {
+  /* Khai báo class dùng chung */
+  .scrollbar-orange {
+    /* Cho Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #f97316 white;
+  }
+  
+  /* Cho Chrome, Edge, Safari */
+  .scrollbar-orange::-webkit-scrollbar {
+    @apply w-2; /* Rộng 8px */
+  }
+  
+  .scrollbar-orange::-webkit-scrollbar-track {
+    @apply bg-white rounded-full;
+  }
+  
+  .scrollbar-orange::-webkit-scrollbar-thumb {
+    @apply bg-orange-500 rounded-full;
+  }
+  
+  .scrollbar-orange:hover::-webkit-scrollbar-thumb {
+    @apply bg-orange-600;
+  }
+}
+
+@utility card-stack-shadow {
+  box-shadow: 0 -10px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility hairline {
+  border: 1px solid var(--card-border);
+}
