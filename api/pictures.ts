@@ -1,5 +1,10 @@
 // api/track.ts
+import { MongoClient } from 'mongodb';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+// Kết nối database
+const uri = process.env.MONGODB_URI!;
+const client = new MongoClient(uri);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   
@@ -24,13 +29,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const authHeader = `Basic ${Buffer.from(`${process.env.MAXMIND_ACCOUNT_ID}:${process.env.MAXMIND_LICENSE_KEY}`).toString('base64')}`;
     
     // Lưu ý: Lúc này truyền clientIp vào URL thay vì '/me'
-    const maxmindRes = await fetch(`https://geoip.maxmind.com/geoip/v2.1/city/${clientIp}`, {
-      headers: {
-        'Authorization': authHeader,
-        'Accept': 'application/json'
-      }
-    });
-    const ipData = await maxmindRes.json();
+    // const maxmindRes = await fetch(`https://geoip.maxmind.com/geoip/v2.1/city/${clientIp}`, {
+    //   headers: {
+    //     'Authorization': authHeader,
+    //     'Accept': 'application/json'
+    //   }
+    // });
+    // const ipData = await maxmindRes.json();
+    const geoRes = await fetch(`https://ip-api.com/json/${clientIp}`);
+    const ipData = await geoRes.json();
 
     // 5. GOM DATA VÀ BẮN LÊN MONGODB TỪ SERVER
     const ultimatePayload = {
@@ -43,26 +50,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
       visited_at: new Date()
     };
+        // Kết nối tới DB (Mày nên để client.connect() bên ngoài handler nếu có thể để tối ưu)
+        await client.connect();
+        const db = client.db("portfolio"); // Thay "portfolio" bằng tên DB của mày
+        const collection = db.collection("visitors"); // Thay "visitors" bằng tên Collection của mày
 
-    await fetch("YOUR_MONGODB_DATA_API_ENDPOINT/action/insertOne", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": process.env.MONGODB_API_KEY || "", // Giấu luôn Key MongoDB
-      },
-      body: JSON.stringify({
-        dataSource: "Cluster0",
-        database: "portfolio",
-        collection: "visitors",
-        document: ultimatePayload
-      })
-    });
+        // Bắn thẳng vào MongoDB
+        const result = await collection.insertOne(ultimatePayload);
 
-    // 6. Trả về cho React biết là thành công
-    return res.status(200).json({ success: true });
+        console.log("Đã lưu thành công với ID:", result.insertedId);
+        return res.status(200).json({ success: true, id: result.insertedId });
 
-  } catch (error: any) {
-    console.error("LỖI CHI TIẾT:", error); // Nhìn vào Logs Vercel sẽ thấy nó chửi cái gì
-    return res.status(500).json({ error: 'Internal Server Error', msg: error.message });
+    } catch (dbError) {
+        console.error("LỖI MONGODB:", dbError);
+    return res.status(500).json({ error: "Không thể lưu vào database", details: dbError });
+    } finally {
+        await client.close();
     }
 }
