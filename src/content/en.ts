@@ -18,7 +18,7 @@ export const en = {
       kicker: "Aspiring Fullstack Developer",
       headline: ["Building with", "purpose in", "Đà Nẵng."],
       bio: "I build software with a simple goal: making everyday routines lighter and lives a little easier. But beyond just solving problems, I design cool, visually striking websites that please the eye and enrich the soul through thoughtful aesthetics. It’s a practice rooted in technical logic, but driven entirely by human empathy and a love for beautiful design.",
-      portraitAlt: "Portrait of Quang, a young developer in soft natural light",
+      portraitAlt: "Portrait of Hau, a young developer in soft natural light",
       deckHint: "View deck",
       hintNext: "Projects",
     },
@@ -259,7 +259,7 @@ export const en = {
     chapter1: {
       label: "Chapter 01 — Curiosity for the world",
       intro:
-        "I have a genuine interest for culture, history and geography of countries I've never set foot in. I read about them, watch documentaries about them, and keep a slowly-growing list of places I want to see in person.",
+        "I have an interest for culture, history and geography of countries I've never set foot in. I read about them, watch documentaries about them, and keep a slowly-growing list of places I want to see in person.",
       cityInteractHint: "Click to see my travel letters from each city.",
       moduleHeading: "Countries I Want To Step Foot To",
       selectPrompt: "Select a country to fly the globe there.",
@@ -276,9 +276,9 @@ export const en = {
       heroEyebrow: "My Obsession for Bunnies",
       heroTitleLine1: "Absolute",
       heroTitleLine2: "Bunny Maniac",
-      heroBoldLead: "Yes, I am completely obsessed.",
+      heroBoldLead: "I am completely obsessed.",
       heroBody:
-        "I think they're ridiculously cute. They're quiet, a little awkward, and only really trust the people they're comfortable with. Honestly... that's pretty relatable. If reincarnation is real, I'd like to come back as a well-loved house bunny. So yes, there's an entire rabbit magazine hidden inside my portfolio. I hope you have fun exploring it and maybe you'll end up learning something about them too.",
+        "I think they're ridiculously cute. They're quiet, a little awkward, and only really trust the people they're comfortable with. Honestly that's pretty relatable. If reincarnation is real, I'd like to come back as a well-loved house bunny. So there's an entire rabbit magazine hidden inside my portfolio. I hope you have fun exploring it and maybe you'll end up learning something about them too.",
       essayLabel: "PERSONAL ESSAY ABOUT BUNNIES",
       essayAuthor: "Written by Ngọc Hậu",
       article: {

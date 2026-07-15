@@ -4,7 +4,7 @@ type Dict = typeof EnDict;
 
 export const vi: Dict = {
   meta: {
-    name: "Thân Ngọc Hậu",
+    name: "Tăng Ngọc Hậu",
     wordmark: "NgocHau",
     location: "Đà Nẵng, Việt Nam",
     role: "Aspiring Fullstack Developer",
@@ -21,14 +21,14 @@ export const vi: Dict = {
   intro: {
     kicker: "Aspiring Fullstack Developer",
     headline: ["Lập trình", "có mục đích", " tại Đà Nẵng."],
-    bio: "Tôi xây dựng phần mềm với một mục tiêu đơn giản: làm cho những công việc hàng ngày trở nên nhẹ nhàng hơn và cuộc sống dễ dàng hơn một chút. Nhưng không chỉ dừng lại ở việc giải quyết vấn đề, tôi thiết kế những trang web ấn tượng, bắt mắt, làm hài lòng thị giác và làm phong phú tâm hồn thông qua tính thẩm mỹ chu đáo. Đó là một quá trình bắt nguồn từ tư duy kỹ thuật logic, nhưng được thúc đẩy hoàn toàn bởi sự đồng cảm và tình yêu dành cho cái đẹp.",
+    bio: "Tôi xây dựng phần mềm với một mục tiêu đơn giản: làm cho những công việc hàng ngày trở nên nhẹ nhàng hơn và cuộc sống dễ dàng hơn một chút. Nhưng không chỉ dừng lại ở việc giải quyết vấn đề, tôi thiết kế những trang web ấn tượng, bắt mắt, nâng cấp trải nghiệm người dùng thông qua tính thẩm mỹ chu đáo. Đó là một quá trình bắt nguồn từ tư duy kỹ thuật logic, nhưng được thúc đẩy hoàn toàn bởi sự đồng cảm và tình yêu dành cho cái đẹp.",
     portraitAlt: "Chân dung Hậu, một lập trình viên trẻ dưới ánh sáng tự nhiên dịu nhẹ",
     deckHint: "Xem slide",
     hintNext: "Dự án",
   },
   projects: {
     eyebrow: "Dự án tiêu biểu",
-    heading: "Những thứ tôi vừa xây dựng.",
+    heading: "Một vài dự án của tôi.",
     subheading: "Nơi trưng bày các hệ thống full-stack, tích hợp Web3 và ứng dụng di động.",
     openSite: "Mở trang web",
     items: [
@@ -200,7 +200,7 @@ export const vi: Dict = {
     languages: {
       vi: { name: "Tiếng Việt", proficiency: "Người bản xứ" },
       en: { name: "English", proficiency: "IELTS 7.5 — Lưu loát" },
-      ja: { name: "日本語", proficiency: "JLPT N3 — Giao tiếp" },
+      ja: { name: "日本語", proficiency: "JLPT N3 — Mức giao tiếp" },
     },
   },
   achievements: {
@@ -228,12 +228,12 @@ export const vi: Dict = {
     eyebrow: "Cá nhân",
     personalTitle: ["TÔI LÀ AI", "KHI KHÔNG CODE."],
     personalDescription:
-      "Tôi không muốn portfolio này là một trang portfolio khác nơi tôi lấy đi năm phút của bạn chỉ để giải thích tôi đam mê công nghệ đến mức nào. Tôi muốn portfolio này tồn tại không chỉ dành cho những người trong ngành công nghệ. Tất nhiên nó ở đây để giới thiệu công việc của tôi, nhưng tôi cũng muốn nó tiếp cận với bất kỳ ai tình cờ ghé qua, những người bạn tương lai, những người lạ tò mò, hay đơn giản là những người có cùng tần số với những thứ tôi quan tâm. Vì vậy, tôi sẽ dùng không gian này để kể cho bạn nghe về những thứ tôi yêu thích.",
+      "Tôi không muốn đây là một trang portfolio nơi tôi lấy đi năm phút của bạn chỉ để giải thích tôi đam mê công nghệ đến mức nào. Tôi muốn trang này tồn tại không chỉ dành cho những người trong ngành công nghệ. Dĩ nhiên nó ở đây để giới thiệu công việc của tôi, nhưng tôi cũng muốn nó tiếp cận với bất kỳ ai tình cờ ghé qua, những người bạn tương lai, những người lạ tò mò, hay đơn giản là những người có cùng tần số với những thứ tôi quan tâm. Vì vậy, tôi sẽ dùng không gian này để kể cho bạn nghe về những thứ tôi yêu thích.",
     personalDrag: "Tìm hiểu thêm về tôi",
     chapter1: {
       label: "Chương 01 — Sự tò mò về thế giới",
       intro:
-        "Tôi có một sự hứng thú đối với văn hóa, lịch sử và địa lý của những quốc gia mà tôi chưa bao giờ đặt chân tới. Tôi đọc về chúng và giữ một danh sách ngày càng dài những nơi tôi muốn tận mắt nhìn thấy.",
+        "Tôi có sự hứng thú đối với văn hóa, lịch sử và địa lý của những quốc gia mà tôi chưa bao giờ đặt chân tới. Tôi đọc về chúng và giữ một danh sách ngày càng dài những nơi tôi muốn tận mắt nhìn thấy.",
       cityInteractHint: "Nhấn vào để đọc những bức thư của tôi từ mỗi thành phố.",
       moduleHeading: "Những Quốc Gia Tôi Muốn Đặt Chân Tới",
       selectPrompt: "Chọn một quốc gia để xoay quả địa cầu đến đó.",
@@ -252,7 +252,7 @@ export const vi: Dict = {
       heroTitleLine2: "Tuyệt Đối",
       heroBoldLead: "TÔI YÊU THỎ",
       heroBody:
-        "Chúng dễ thương đến mức lố bịch. Chúng trầm tính, hơi ngốc nghếch một chút, và chỉ thực sự tin tưởng những người mà chúng cảm thấy thoải mái. Một phần nào đó tôi đồng cảm được. Nếu luân hồi là có thật, tôi muốn được đầu thai làm một chú thỏ nhà được cưng chiều. Nên đây là một cuốn tạp chí về thỏ được giấu bên trong portfolio của tôi. Tôi hy vọng bạn sẽ có khoảng thời gian vui vẻ khi khám phá và biết đâu bạn lại học được điều gì đó mới mẻ về chúng.",
+        "Thỏ dễ thương vô cùng. Nó trầm tính, nó ngốc nghếch một chút, và chỉ thực sự tin tưởng những người mà chúng cảm thấy thoải mái. Một phần nào đó tôi đồng cảm được. Nếu luân hồi là có thật, tôi muốn được đầu thai làm một chú thỏ nhà được cưng chiều. Nên đây là một cuốn tạp chí về thỏ được giấu bên trong portfolio của tôi. Tôi hy vọng bạn sẽ có khoảng thời gian vui vẻ khi khám phá và biết đâu bạn lại học được điều gì đó mới mẻ về chúng.",
       essayLabel: "BÀI TỰ LUẬN VỀ THỎ",
       essayAuthor: "Viết bởi Ngọc Hậu",
       article: {
@@ -276,9 +276,9 @@ export const vi: Dict = {
         globalDominationHeading: "Thống Trị Toàn Cầu",
         globalDominationBody:
           "Từ vùng lãnh nguyên băng giá đến những sa mạc thiêu đốt, thỏ đã chinh phục gần như mọi lục địa. Chúng dựa vào những chiếc râu cực kỳ nhạy cảm để lập bản đồ độ rộng của một đường hầm trước cả khi cơ thể chúng quyết định chui vào. Chúng có khả năng thích nghi đáng kinh ngạc. Về cơ bản là không thể ngăn cản!!",
-        fact1: "Răng cửa mọc liên tục, lên tới 12cm mỗi năm! Chúng cần vật cứng để mài mòn răng.",
-        fact2: "Một thỏ mẹ có thể mang thai lại chỉ vài giờ sau khi sinh, về mặt lý thuyết có thể biến một cặp thỏ duy nhất thành hơn 3.000 con cháu chỉ trong vòng một năm!",
-        fact3: "Chúng ngủ khoảng 8 giờ mỗi ngày, nhưng chỉ trong những giấc ngủ ngắn từ 5 đến 25 phút. Điều điên rồ hơn nữa? Chúng thường ngủ với đôi mắt mở to để canh chừng nguy hiểm!",
+        fact1: "Răng cửa mọc liên tục, lên tới 12cm mỗi năm! Chúng cần vật cứng để mài mòn răng mỗi ngày.",
+        fact2: "Một thỏ mẹ có thể mang thai lại chỉ vài giờ sau khi sinh, về mặt lý thuyết có thể biến một cặp thỏ duy nhất thành hơn 3.000 con chỉ trong vòng một năm!",
+        fact3: "Chúng ngủ khoảng 8 giờ mỗi ngày, nhưng những giấc ngủ chỉ ngắn từ 5 đến 25 phút. Thú vị hơn nữa là chúng thường ngủ với đôi mắt mở to để canh chừng nguy hiểm!",
       },
       stats: {
         heading: "CHỈ SỐ CỦA THỎ",
@@ -360,7 +360,7 @@ export const vi: Dict = {
         heading1: "Tầm Nhìn",
         heading2: "Của Thỏ",
         paragraph1:
-          "Như chúng ta đã thiết lập, các loài động vật bị săn mồi đánh đổi nhận thức chiều sâu để lấy một tầm nhìn rộng hơn. Nhưng thỏ đưa bản thiết kế sinh học này đến mức độ khắc nghiệt tuyệt đối của nó.",
+          "Như trên đã đề cập, các loài động vật bị săn mồi đánh đổi nhận thức chiều sâu để lấy một tầm nhìn rộng hơn. Nhưng thỏ đưa bản thiết kế sinh học này đến mức độ khắc nghiệt tuyệt đối của nó.",
         paragraph2Pre:
           "Bằng cách định vị đôi mắt to của nó ở vị trí đặc biệt cao và rộng trên hộp sọ, thỏ hợp nhất hai luồng quang học riêng biệt thành một",
         paragraph2Bold: "radar hình ảnh gần 360°",
@@ -388,7 +388,7 @@ export const vi: Dict = {
       moduleLabel: "Gacha Thỏ",
       moduleHeading: "Quay Thỏ, Nhận Thông Điệp",
       pullButton: "Quay",
-      natureSuffix: "Hệ",
+      natureSuffix: "Người Chơi Hệ",
       rarityLabel: "Độ Hiếm",
       blurbPrefix: "Vận may hôm nay",
       factLabel: "Sự Thật Thú Vị",
@@ -418,7 +418,7 @@ export const vi: Dict = {
         },
         warning: {
           heading: "Cảnh báo",
-          body: "Phát hiện mức độ dễ thương cực độ. Tiến hành cẩn thận. Không cho các viên nang ăn.",
+          body: "Phát hiện mức độ dễ thương cực độ. Tiến hành cẩn thận. Không cho các đối tượng ăn.",
         },
         machineActive: "Máy Đang Hoạt Động",
         machineCode: "BNUY-01",
@@ -614,7 +614,7 @@ export const vi: Dict = {
         titleLine2: "Bạn",
         titleHighlight: "sẽ",
         titleLine3: "Tìm Thấy Tôi.",
-        body: "Tôi dành phần lớn thời gian ở ngoài. Có điều gì đó khi được bao quanh bởi con người, những địa điểm và những khoảnh khắc nhỏ bé của cuộc sống thường ngày giúp tâm trí tôi luôn hoạt động. Laptop của tôi thường hạ cánh trên một chiếc bàn quán cà phê hoặc trong thư viện, tai nghe luôn mang theo bên mình, và cảm hứng bằng một cách nào đó sẽ tuôn trào tốt hơn khi tôi không nhìn chằm chằm vào bốn bức tường. Phân đoạn này thực sự đang được viết khi tôi đang ngồi ở một quán cà phê. Tôi chỉ đơn giản là tận hưởng việc dành thời gian ở ngoài thế giới, dù là tôi đang làm việc, đi lang thang, hay không làm gì cả.",
+        body: "Tôi dành phần lớn thời gian ở ngoài. Khi được bao quanh bởi con người, những địa điểm và những khoảnh khắc nhỏ bé của cuộc sống thường ngày giúp tâm trí tôi luôn hoạt động. Laptop của tôi thường được đặt trên một chiếc bàn quán cà phê hoặc trong thư viện, tai nghe luôn mang theo bên mình, và cảm hứng bằng một cách nào đó sẽ tuôn trào tốt hơn khi tôi không nhìn chằm chằm vào bốn bức tường. Phân đoạn này thực sự đang được viết khi tôi đang ngồi ở một quán cà phê. Tôi chỉ đơn giản là tận hưởng việc dành thời gian ở ngoài thế giới, dù là tôi đang làm việc, đi lang thang, hay không làm gì cả.",
         altHopscotch: "Một ngày nắng đẹp trong công viên",
         altHorizontalShip: "Cỏ đung đưa trong gió",
       },
@@ -622,7 +622,7 @@ export const vi: Dict = {
       spreadTwo: {
         altPanorama: "Phong cảnh bãi biển đầy nắng",
         quote: "Thủy triều dường như chẳng bao giờ vội vã.",
-        body: "Có một điều tôi luôn để ý khi ở bãi biển, đó là cách những con sóng xóa nhòa đi những dấu chân trên cát. Mỗi dấu vết đều thuộc về một ai đó vừa ở đây cách đây vài khoảnh khắc, một ai đó đang đi dạo, đang cười, đang suy nghĩ, đang sống trong câu chuyện nhỏ của riêng họ. Rồi thủy triều dâng lên, như nó vẫn luôn thế, để lại một bờ biển nguyên vẹn trở lại trước khi những bước chân tiếp theo xuất hiện.",
+        body: "Có một điều tôi luôn để ý khi ở bãi biển, đó là cách những con sóng xóa nhòa đi những dấu chân trên cát. Mỗi dấu vết đều thuộc về một ai đó vừa ở đây cách đây vài khoảnh khắc, một ai đó đang đi dạo, đang cười, đang suy nghĩ, đang sống trong câu chuyện nhỏ của riêng họ. Rồi thủy triều dâng lên như thường lệ, để lại một bờ biển nguyên vẹn trở lại trước khi những bước chân tiếp theo xuất hiện.",
         altTerraGate: "Nước rửa trôi trên cát",
         altBuddhaBeach: "Những tảng đá cạnh biển",
       },
@@ -638,7 +638,7 @@ export const vi: Dict = {
       spreadFour: {
         altCoffeeHill: "Cây cối trong rừng núi",
         note: "thay đổi độ cao.",
-        body: "Lái xe lên những ngọn đồi giúp tôi giải tỏa đầu óc nhanh hơn bất cứ thứ gì khác. Không khí giảm đi vài độ, tiếng ồn ào của thành phố nhỏ dần, và bạn có được một khung cảnh rộng lớn, không bị cản trở. Đó là nơi hoàn hảo để ngồi và hoàn toàn không làm gì cả trong nhiều giờ liền.",
+        body: "Lái xe lên những ngọn đồi giúp tôi giải tỏa đầu óc nhanh hơn bất cứ điều gì khác. Không khí giảm đi vài độ, tiếng ồn ào của thành phố nhỏ dần, và bạn có được một khung cảnh rộng lớn, không bị cản trở. Đó là nơi hoàn hảo để ngồi và hoàn toàn không làm gì cả trong nhiều giờ liền.",
         altHillTop: "Nhìn xuống con đường ngoằn ngoèo",
         altHillSea: "Khung cảnh nhìn từ trên núi",
       },

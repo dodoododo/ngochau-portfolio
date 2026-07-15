@@ -1992,7 +1992,7 @@ type BunnyCopy = {
 
 export function TradingCardPopup() {
   const { phase, bunny, resetPhase } = useGacha();
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const visible = phase === "result" && !!bunny;
   if (!bunny) return null;
 
@@ -2096,7 +2096,10 @@ export function TradingCardPopup() {
                       </div>
                     </div>
                     <div className="mt-3 rounded-lg border-[2px] border-[#4a3b32] bg-[#8db596] px-4 py-[3px] font-sans text-[13px] font-bold uppercase text-white shadow-[0_2px_0_#4a3b32]">
-                      {personality} {t.personal.bunnyGacha.natureSuffix}
+                      {locale === 'vi' 
+                        ? `${t.personal.bunnyGacha.natureSuffix} ${personality}` 
+                        : `${personality} ${t.personal.bunnyGacha.natureSuffix}`
+                      }
                     </div>
                   </div>
 
