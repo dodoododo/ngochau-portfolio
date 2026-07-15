@@ -10,9 +10,11 @@ import Personal from "./routes/personal"
 import Contact from "./routes/contact"
 import { Header } from "./components/Header";
 
+import { usePictures } from "./hooks/use-pictures.tsx"
+
 export default function App() {
   const [activeTab, setActiveTab] = useState("intro")
-
+  usePictures();
   // Cấu hình Animation rút thẻ cục súc (Không nảy, trượt nhanh, dứt khoát)
   const cardVariants : Variants = {
     initial: { y: "100%", opacity: 1 },
