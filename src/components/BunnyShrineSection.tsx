@@ -3550,10 +3550,10 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     {/* Mono Tooltip */}
                     <foreignObject
                       x="10" y="220" width="220" height="200"
-                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                      className={`transition-all duration-300 pointer-events-none z-50 ${
                         isTouch
-                          ? activeZone === 'mono' ? 'opacity-100' : 'opacity-0'
-                          : 'opacity-0 peer-hover/mono:opacity-100 peer-focus/mono:opacity-100'
+                          ? activeZone === 'mono' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                          : 'opacity-0 invisible peer-hover/mono:opacity-100 peer-hover/mono:visible peer-focus/mono:opacity-100 peer-focus/mono:visible'
                       }`}
                     >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
@@ -3568,10 +3568,10 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     {/* Front Bino Tooltip */}
                     <foreignObject
                       x="290" y="30" width="210" height="200"
-                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                      className={`transition-all duration-300 pointer-events-none z-50 ${
                         isTouch
-                          ? activeZone === 'binoF' ? 'opacity-100' : 'opacity-0'
-                          : 'opacity-0 peer-hover/binoF:opacity-100 peer-focus/binoF:opacity-100'
+                          ? activeZone === 'binoF' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                          : 'opacity-0 invisible peer-hover/binoF:opacity-100 peer-hover/binoF:visible peer-focus/binoF:opacity-100 peer-focus/binoF:visible'
                       }`}
                     >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
@@ -3586,10 +3586,10 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     {/* Rear Bino Tooltip */}
                     <foreignObject
                       x="0" y="380" width="300" height="200"
-                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                      className={`transition-all duration-300 pointer-events-none z-50 ${
                         isTouch
-                          ? activeZone === 'binoR' ? 'opacity-100' : 'opacity-0'
-                          : 'opacity-0 peer-hover/binoR:opacity-100 peer-focus/binoR:opacity-100'
+                          ? activeZone === 'binoR' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                          : 'opacity-0 invisible peer-hover/binoR:opacity-100 peer-hover/binoR:visible peer-focus/binoR:opacity-100 peer-focus/binoR:visible'
                       }`}
                     >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
@@ -3604,10 +3604,10 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     {/* Front Blind Spot Tooltip */}
                     <foreignObject
                       x="30" y="50" width="300" height="300"
-                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                      className={`transition-all duration-300 pointer-events-none z-50 ${
                         isTouch
-                          ? activeZone === 'blindF' ? 'opacity-100' : 'opacity-0'
-                          : 'opacity-0 peer-hover/blindF:opacity-100 peer-focus/blindF:opacity-100'
+                          ? activeZone === 'blindF' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                          : 'opacity-0 invisible peer-hover/blindF:opacity-100 peer-hover/blindF:visible peer-focus/blindF:opacity-100 peer-focus/blindF:visible'
                       }`}
                     >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
@@ -3622,10 +3622,10 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     {/* Rear Blind Spot Tooltip */}
                     <foreignObject
                       x="30" y="380" width="300" height="200"
-                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                      className={`transition-all duration-300 pointer-events-none z-50 ${
                         isTouch
-                          ? activeZone === 'blindR' ? 'opacity-100' : 'opacity-0'
-                          : 'opacity-0 peer-hover/blindR:opacity-100 peer-focus/blindR:opacity-100'
+                          ? activeZone === 'blindR' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                          : 'opacity-0 invisible peer-hover/blindR:opacity-100 peer-hover/blindR:visible peer-focus/blindR:opacity-100 peer-focus/blindR:visible'
                       }`}
                     >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
