@@ -2,12 +2,17 @@
 import { MongoClient } from 'mongodb';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-// Kết nối database
-const uri = process.env.MONGODB_URI!;
-const client = new MongoClient(uri);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  
+  // 1. Lấy URI bên trong hàm (đã có ở đây rồi, tốt!)
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    console.error("MONGODB_URI bị rỗng!");
+    return res.status(500).json({ error: "Server Configuration Error: MONGODB_URI missing" });
+  }
+
+  // Khởi tạo client ở trong hàm luôn
+  const client = new MongoClient(uri);
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Only POST allowed' });
   }
