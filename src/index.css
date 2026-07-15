@@ -57,6 +57,16 @@ html[lang="vi"] .font-serif {
   font-family: 'Playfair Display', serif !important;
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+
 /* Nếu bạn có dùng thẻ tiêu đề h1->h6 mà bị lỗi font, nó cũng sẽ được sửa */
 html[lang="vi"] h1,
 html[lang="vi"] h2,

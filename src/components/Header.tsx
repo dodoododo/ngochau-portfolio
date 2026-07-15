@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocale } from "@/content/i18n";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Header({ activeTab, setActiveTab }: { activeTab: string, setActiveTab: (tab: string) => void }) {
   const { t, locale, setLocale } = useLocale();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // 1. Khởi tạo ref để bắt sự kiện click bên ngoài
+  const headerRef = useRef<HTMLElement>(null);
 
+  // Khai báo lại mảng navItems bị thiếu
   const navItems = [
     { id: "intro", label: t.nav.introduction },
     { id: "projects", label: t.nav.projects },
@@ -15,14 +19,35 @@ export function Header({ activeTab, setActiveTab }: { activeTab: string, setActi
     { id: "contact", label: t.nav.contact },
   ];
 
-  // Hàm xử lý khi click vào tab
   const handleTabClick = (id: string) => {
     setActiveTab(id);
-    setIsMobileMenuOpen(false); // Đóng menu mobile sau khi chọn
+    setIsMobileMenuOpen(false); 
   };
 
+  // 2. Lắng nghe sự kiện click bên ngoài Header
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header className="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between border-b border-card-border/60 bg-white/50 px-6 backdrop-blur-md md:h-20 md:px-10">
+    <header 
+      ref={headerRef} 
+      className="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between border-b border-card-border/60 bg-white/50 px-6 backdrop-blur-3xl md:h-20 md:px-10"
+    >
       
       {/* Wordmark */}
       <button 
@@ -55,8 +80,9 @@ export function Header({ activeTab, setActiveTab }: { activeTab: string, setActi
       </nav>
       
       {/* Right Side: Lang Switcher & Mobile Menu Toggle */}
-      <div className="flex items-center gap-3 z-10">{/* Language Switcher */}
-        {/* Dùng text-[10px] cho mobile nhỏ, sm:text-[12px] md:text-[13px] cho màn hình lớn hơn */}
+      <div className="flex items-center gap-3 z-10">
+        
+        {/* Language Switcher */}
         <div className="relative flex items-center gap-1 md:gap-1 rounded-full border border-slate-600/40 p-1 bg-bg-base text-[10px] sm:text-[12px] md:text-[13px] font-bold shrink min-w-0">
           {[
             { id: "en", label: "EN" },
@@ -67,12 +93,10 @@ export function Header({ activeTab, setActiveTab }: { activeTab: string, setActi
             <button
               key={lang.id}
               onClick={() => setLocale(lang.id as "en" | "ja" | "tr" | "vi")}
-              // Thay w-14 bằng flex-1 và px co giãn để nút tự ép lại khi màn hình hẹp, nở ra khi màn hình rộng
               className={`relative flex flex-1 items-center justify-center rounded-full py-1.5 px-2 sm:px-3 md:px-4 transition-colors duration-300 min-w-0 ${
                 locale === lang.id ? "text-bg-base" : "text-ink/50 hover:text-ink"
               }`}
             >
-              {/* Hiệu ứng trượt (Sliding Animation) giữ lại từ thiết kế cũ */}
               {locale === lang.id && (
                 <motion.div
                   layoutId="active-locale-pill"
@@ -93,13 +117,11 @@ export function Header({ activeTab, setActiveTab }: { activeTab: string, setActi
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            // Icon Close (X)
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           ) : (
-            // Icon Menu (Hamburger)
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>

@@ -15,7 +15,7 @@ export default function Contact() {
 
   return (
     <PageShell>
-      <div className="mx-auto grid min-h-full max-w-7xl grid-cols-1 gap-16 px-6 py-16 md:grid-cols-12 md:px-12 md:py-24">
+      <div className="mx-auto grid min-h-full max-w-7xl grid-cols-1 gap-16 px-6 py-16 md:grid-cols-12 md:px-12 md:py-12">
         <div className="md:col-span-5">
           <div className="overflow-hidden rounded-2xl border border-card-border">
             <img
@@ -55,7 +55,7 @@ export default function Contact() {
                   <span className="font-display text-lg font-medium tracking-tight md:text-xl">
                     {l.value}
                     <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-1">
-                      ↗
+                      {"↗\uFE0E"}
                     </span>
                   </span>
                 </a>

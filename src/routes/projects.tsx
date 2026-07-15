@@ -80,7 +80,7 @@ export default function Projects() {
                       rel="noreferrer noopener"
                       className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-ink shadow-md transition-transform hover:scale-105"
                     >
-                      {t.projects.openSite || "Open Site"} <span>↗</span>
+                      {t.projects.openSite || "Open Site"} <span>{"↗\uFE0E"}</span>
                     </a>
                   )}
                   
@@ -92,7 +92,7 @@ export default function Projects() {
                       rel="noreferrer noopener"
                       className="flex items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-white shadow-md transition-transform hover:scale-105"
                     >
-                      GitHub <span>↗</span>
+                      GitHub <span>{"↗\uFE0E"}</span>
                     </a>
                   )}
                 </div>

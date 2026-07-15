@@ -79,17 +79,13 @@ export function TravelLetterModal({
           >
             {/* Overlay Texture Layer */}
             <div 
-              className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-50 z-0" 
+              className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-20 z-0" 
               style={{ backgroundImage: paperTexture }}
             />
             
             {/* Paper lighting gradient */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-black/5 z-0" />
 
-            {/* Folded Corner (Bottom Right) */}
-            <div className="pointer-events-none absolute bottom-0 right-0 z-20 h-16 w-16 overflow-hidden">
-              <div className="absolute bottom-0 right-0 h-24 w-24 translate-x-12 translate-y-12 rotate-45 border-l border-t border-stone-200/60 bg-gradient-to-tl from-[#e8e2d2] to-[#f4eee1] shadow-[-6px_-6px_15px_rgba(0,0,0,0.1)]" />
-            </div>
 
             {/* Premium Close Button */}
             <button
@@ -125,7 +121,7 @@ export function TravelLetterModal({
                 className="relative bg-[#FAFAF8] p-3 pb-16 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] ring-1 ring-black/5 md:p-4 md:pb-20"
               >
                 {/* Masking Tape */}
-                <div className="absolute -top-3 left-1/2 h-7 w-28 -translate-x-1/2 rotate-[-2deg] bg-white/40 shadow-sm backdrop-blur-sm border border-white/30 rounded-sm z-20" />
+                <div className="absolute -top-3 left-1/2 h-9 w-28 -translate-x-1/2 rotate-[2deg] bg-orange-300/70 shadow-sm backdrop-blur-sm border border-white/30 rounded-sm z-20" />
                 
                 <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden bg-stone-200 sm:max-w-[340px]">
                   {/* Inner shadow overlay for depth */}

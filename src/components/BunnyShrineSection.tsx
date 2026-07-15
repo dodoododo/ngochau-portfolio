@@ -2021,7 +2021,7 @@ export function TradingCardPopup() {
           exit={{ opacity: 0 }}
           onClick={close}
         >
-          <div className="flex min-h-full items-center justify-center p-4 py-16">
+          <div className="flex min-h-full items-center justify-center p-4 py-16 overscroll-contain">
             <motion.div
               className="relative w-full max-w-[850px]"
               initial={{ scale: 0.8, y: 50, rotate: -1 }}
@@ -2063,7 +2063,16 @@ export function TradingCardPopup() {
                       </h2>
                     </div>
 
-                    <div className="relative mt-5 flex h-[240px] w-[210px] flex-col items-center justify-center overflow-hidden rounded-t-full rounded-b-[2.5rem] border-[4px] border-[#4a3b32] bg-[#f4ece1] shadow-[inset_0_8px_16px_rgba(74,59,50,0.1)]">
+                    {/* 
+                      FIX 1: Thu nhỏ một chút trên mobile (w-[180px] h-[200px]), giữ nguyên trên máy tính (sm:w-[210px] sm:h-[240px]). 
+                      FIX 2: Thêm class 'isolate' hoặc 'transform-gpu' để ép Safari (iPhone) cắt viền bo góc chuẩn xác. 
+                    */}
+                    {/* KHUNG ẢNH CHÍNH */}
+                    <div 
+                      className="relative mt-5 flex h-[240px] w-[210px] flex-col items-center justify-center overflow-hidden rounded-t-full rounded-b-[2.5rem] border-[4px] border-[#4a3b32] bg-[#f4ece1] shadow-[inset_0_8px_16px_rgba(74,59,50,0.1)]"
+                      /* BÍ QUYẾT FIX LỖI TRÀN KHUNG TRÊN ĐIỆN THOẠI (Safari iOS Bug) */
+                      style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                    >
                       <div
                         className="absolute inset-0 opacity-[0.25]"
                         style={{ backgroundImage: `repeating-conic-gradient(from 0deg, transparent 0deg 15deg, ${bunny.colorA || '#e87a5d'} 15deg 30deg)` }}
@@ -2074,7 +2083,12 @@ export function TradingCardPopup() {
                           <img
                             src={bunny.imageUrl}
                             alt={name}
-                            className="absolute inset-0 h-full w-full object-cover object-center"
+                            /* 
+                              1. h-full w-full: Ép ảnh luôn chiếm trọn 100% diện tích khung.
+                              2. object-cover: Phóng to ảnh để LẤP ĐẦY hoàn toàn (xóa bỏ khoảng trống phía trên).
+                              3. object-bottom: Neo trọng tâm ảnh xuống đáy để chân thỏ luôn chạm viền dưới.
+                            */
+                            className="absolute inset-0 h-full w-full object-cover object-bottom"
                           />
                         ) : (
                           <span className="text-[5.5rem]">{bunny.emoji}</span>
@@ -2469,9 +2483,10 @@ const SPECIMEN_SRCS = [
 const TORNS = [TORN_A, TORN_B, TORN_C];
 
 export function ScrapbookCanvas({ t }: { t: any }) {
-  // Thêm 2 state này vào đầu component của bạn
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [activeZone, setActiveZone] = useState<{title: string, desc: string, color: string} | null>(null);
+  const [isTouch, setIsTouch] = useState(false);
+  const [activeZone, setActiveZone] = useState<
+    'mono' | 'blindF' | 'blindR' | 'binoF' | 'binoR' | null
+  >(null);
 
   const sb = t.personal.scrapbook;
 
@@ -2480,12 +2495,20 @@ export function ScrapbookCanvas({ t }: { t: any }) {
     label: sb.credits.specimens[i],
   }));
 
-  // Hàm xử lý di chuyển chuột
-  const handleMouseMove = (e: React.MouseEvent, title: string, desc: string, color: string) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    setActiveZone({ title, desc, color });
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: none), (pointer: coarse)');
+    setIsTouch(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsTouch(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const handleZoneTap = (zone: typeof activeZone) => {
+    if (!isTouch) return;
+    setActiveZone((prev) => (prev === zone ? null : zone));
   };
+  // ====== HẾT PHẦN ĐẶT Ở ĐẦU COMPONENT ======
+
   return (
     <div className="w-full bg-[#141414] flex justify-center">
       <div className="relative w-full h-full bg-[#f4f0e6] shadow-[0_0_80px_rgba(0,0,0,0.6)] overflow-hidden font-serif text-[#1b1b1b]">
@@ -3395,7 +3418,7 @@ export function ScrapbookCanvas({ t }: { t: any }) {
 
               {/* --- RIGHT: The Scientific Diagram (Interactive Edition) --- */}
               <div className="w-full lg:w-[50%] bg-white border-[3px] border-[#1b1b1b] shadow-[8px_8px_0_#1b1b1b] p-4 sm:p-8 relative overflow-hidden">
-                
+
                 {/* Corner accents for blueprint feel */}
                 <div className="absolute top-2 left-2 w-3 h-3 border-t-[2px] border-l-[2px] border-[#1b1b1b]" />
                 <div className="absolute top-2 right-2 w-3 h-3 border-t-[2px] border-r-[2px] border-[#1b1b1b]" />
@@ -3404,10 +3427,10 @@ export function ScrapbookCanvas({ t }: { t: any }) {
 
                 {/* Main Diagram Container - Expanded & Interactive */}
                 <div className="relative m-auto w-full max-w-[300px] aspect-square flex items-center justify-center">
-                  
+
                   {/* SINGLE SVG CANVAS (Handles Z-index natively: Zones -> Bunny -> Tooltips) */}
                   <svg viewBox="0 0 500 500" className="absolute inset-0 w-full h-full drop-shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
-                    
+
                     {/* --- SVG DEFINITIONS (Gradients & Patterns) --- */}
                     <defs>
                       <radialGradient id="monoGradient" cx="50%" cy="50%" r="50%">
@@ -3427,50 +3450,112 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                       </pattern>
                     </defs>
 
-                    {/* LAYER 1: Background Rings & Crosshairs */}
-                    <circle cx="250" cy="250" r="240" fill="none" stroke="#1b1b1b" strokeWidth="1" strokeDasharray="4 6" opacity="0.4" />
-                    <circle cx="250" cy="250" r="160" fill="none" stroke="#1b1b1b" strokeWidth="1" strokeDasharray="4 6" opacity="0.4" />
-                    <line x1="250" y1="10" x2="250" y2="490" stroke="#1b1b1b" strokeWidth="1" opacity="0.1" />
-                    <line x1="10" y1="250" x2="490" y2="250" stroke="#1b1b1b" strokeWidth="1" opacity="0.1" />
+                    {/* LAYER 0: Nền trong suốt để tap ra ngoài đóng tooltip (chỉ có tác dụng ở mobile) */}
+                    <rect
+                      x="0" y="0" width="500" height="500"
+                      fill="transparent"
+                      onClick={() => isTouch && setActiveZone(null)}
+                    />
 
-                    {/* LAYER 2: INTERACTIVE ZONES (Hover catchers defined as Tailwind Peers) */}
-                    
+                    {/* LAYER 1: Background Rings & Crosshairs */}
+                    <circle cx="250" cy="250" r="240" fill="none" stroke="#1b1b1b" strokeWidth="1" strokeDasharray="4 6" opacity="0.4" className="pointer-events-none" />
+                    <circle cx="250" cy="250" r="160" fill="none" stroke="#1b1b1b" strokeWidth="1" strokeDasharray="4 6" opacity="0.4" className="pointer-events-none" />
+                    <line x1="250" y1="10" x2="250" y2="490" stroke="#1b1b1b" strokeWidth="1" opacity="0.1" className="pointer-events-none" />
+                    <line x1="10" y1="250" x2="490" y2="250" stroke="#1b1b1b" strokeWidth="1" opacity="0.1" className="pointer-events-none" />
+
+                    {/* LAYER 2: INTERACTIVE ZONES (Hover trên desktop / Tap trên mobile) */}
+
                     {/* Monocular Field (Yellow) */}
-                    <circle cx="250" cy="250" r="230" fill="url(#monoGradient)" className="peer/mono opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-crosshair" />
+                    <circle
+                      cx="250" cy="250" r="230"
+                      fill="url(#monoGradient)"
+                      onClick={() => handleZoneTap('mono')}
+                      className={`peer/mono cursor-crosshair transition-opacity duration-300 ${
+                        isTouch
+                          ? activeZone === 'mono' ? 'opacity-100' : 'opacity-50'
+                          : 'opacity-50 hover:opacity-100'
+                      }`}
+                    />
 
                     {/* Front Blindspot */}
-                    <g className="peer/blindF cursor-help">
-                      <polygon points="190,230 310,230 250,70" fill="url(#hatchPattern)" stroke="#9b1b1b" strokeWidth="1" strokeDasharray="2 2" strokeOpacity="0.9" className="transition-all duration-200 hover:fill-[#1b1b1b]/80" />
+                    <g onClick={() => handleZoneTap('blindF')} className="peer/blindF cursor-help">
+                      <polygon
+                        points="190,230 310,230 250,70"
+                        fill="url(#hatchPattern)"
+                        stroke="#9b1b1b"
+                        strokeWidth="1"
+                        strokeDasharray="2 2"
+                        strokeOpacity="0.9"
+                        className={`transition-all duration-200 ${
+                          isTouch
+                            ? activeZone === 'blindF' ? 'fill-[#1b1b1b]/80' : ''
+                            : 'hover:fill-[#1b1b1b]/80'
+                        }`}
+                      />
                       <polygon points="190,230 310,230 250,70" fill="#ffffff" opacity="0.7" className="pointer-events-none" />
                     </g>
 
                     {/* Rear Blindspot */}
-                    <g className="peer/blindR cursor-help">
-                      <polygon points="190,270 310,270 250,430" fill="url(#hatchPattern)" stroke="#9b1b1b" strokeWidth="1" strokeDasharray="2 2" strokeOpacity="0.9" className="transition-all duration-200 hover:fill-[#1b1b1b]/80" />
+                    <g onClick={() => handleZoneTap('blindR')} className="peer/blindR cursor-help">
+                      <polygon
+                        points="190,270 310,270 250,430"
+                        fill="url(#hatchPattern)"
+                        stroke="#9b1b1b"
+                        strokeWidth="1"
+                        strokeDasharray="2 2"
+                        strokeOpacity="0.9"
+                        className={`transition-all duration-200 ${
+                          isTouch
+                            ? activeZone === 'blindR' ? 'fill-[#1b1b1b]/80' : ''
+                            : 'hover:fill-[#1b1b1b]/80'
+                        }`}
+                      />
                       <polygon points="190,270 310,270 250,430" fill="#ffffff" opacity="0.7" className="pointer-events-none" />
                     </g>
 
-                    {/* Front Binocular Overlap (Now rounded using Arc 'A' command) */}
-                    <path d="M 250 70 L 140 10 A 250 250 0 0 1 360 10 Z" fill="url(#binoGradientFront)" className="peer/binoF opacity-80 hover:opacity-100 hover:scale-105 origin-[250px_70px] transition-all duration-100 cursor-crosshair" />
+                    {/* Front Binocular Overlap */}
+                    <path
+                      d="M 250 70 L 140 10 A 250 250 0 0 1 360 10 Z"
+                      fill="url(#binoGradientFront)"
+                      onClick={() => handleZoneTap('binoF')}
+                      className={`peer/binoF cursor-crosshair origin-[250px_70px] transition-all duration-100 ${
+                        isTouch
+                          ? activeZone === 'binoF' ? 'opacity-100 scale-105' : 'opacity-80'
+                          : 'opacity-80 hover:opacity-100 hover:scale-105'
+                      }`}
+                    />
 
-                    {/* Rear Binocular Overlap (Now rounded using Arc 'A' command) */}
-                    <path d="M 250 430 L 140 490 A 250 250 0 0 0 360 490 Z" fill="url(#binoGradientRear)" className="peer/binoR opacity-80 hover:opacity-100 hover:scale-105 origin-[250px_430px] transition-all duration-100 cursor-crosshair" />
-
+                    {/* Rear Binocular Overlap */}
+                    <path
+                      d="M 250 430 L 140 490 A 250 250 0 0 0 360 490 Z"
+                      fill="url(#binoGradientRear)"
+                      onClick={() => handleZoneTap('binoR')}
+                      className={`peer/binoR cursor-crosshair origin-[250px_430px] transition-all duration-100 ${
+                        isTouch
+                          ? activeZone === 'binoR' ? 'opacity-100 scale-105' : 'opacity-80'
+                          : 'opacity-80 hover:opacity-100 hover:scale-105'
+                      }`}
+                    />
 
                     {/* LAYER 3: THE REAL BUNNY (Embedded inside SVG to fix Z-index) */}
-                    <image 
-                      href="/bunnyMagazine/bunny-top.png" 
-                      x="60" y="70" width="400" height="400" 
+                    <image
+                      href="/bunnyMagazine/bunny-top.png"
+                      x="60" y="70" width="400" height="400"
                       className="pointer-events-none drop-shadow-[0_20px_20px_rgba(0,0,0,0.6)]"
                       style={{ transformOrigin: '250px 250px', transform: 'rotate(-95deg) translate(15px, -10px)' }}
                     />
 
-
                     {/* LAYER 4: FLOATING POPUP TOOLTIPS (Highest Z-index, perfectly positioned) */}
-                    {/* By placing them after the <image> tag, they render ABOVE the bunny! */}
-                    
+
                     {/* Mono Tooltip */}
-                    <foreignObject x="10" y="220" width="220" height="200" className="opacity-0 peer-hover/mono:opacity-100 peer-focus/mono:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                    <foreignObject
+                      x="10" y="220" width="220" height="200"
+                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                        isTouch
+                          ? activeZone === 'mono' ? 'opacity-100' : 'opacity-0'
+                          : 'opacity-0 peer-hover/mono:opacity-100 peer-focus/mono:opacity-100'
+                      }`}
+                    >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
                         <div className="flex items-center gap-2 mb-1.5">
                           <span className="w-3 h-3 rounded-full bg-gradient-to-r from-[#fadb5f] to-[#f59e0b] border border-[#1b1b1b]" />
@@ -3481,7 +3566,14 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     </foreignObject>
 
                     {/* Front Bino Tooltip */}
-                    <foreignObject x="290" y="30" width="210" height="200" className="opacity-0 peer-hover/binoF:opacity-100 peer-focus/binoF:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                    <foreignObject
+                      x="290" y="30" width="210" height="200"
+                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                        isTouch
+                          ? activeZone === 'binoF' ? 'opacity-100' : 'opacity-0'
+                          : 'opacity-0 peer-hover/binoF:opacity-100 peer-focus/binoF:opacity-100'
+                      }`}
+                    >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
                         <div className="flex items-center gap-2 mb-1.5">
                           <span className="w-3 h-3 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#c21807] border border-[#1b1b1b]" />
@@ -3492,7 +3584,14 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     </foreignObject>
 
                     {/* Rear Bino Tooltip */}
-                    <foreignObject x="0" y="380" width="300" height="200" className="opacity-0 peer-hover/binoR:opacity-100 peer-focus/binoR:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                    <foreignObject
+                      x="0" y="380" width="300" height="200"
+                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                        isTouch
+                          ? activeZone === 'binoR' ? 'opacity-100' : 'opacity-0'
+                          : 'opacity-0 peer-hover/binoR:opacity-100 peer-focus/binoR:opacity-100'
+                      }`}
+                    >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
                         <div className="flex items-center gap-2 mb-1.5">
                           <span className="w-3 h-3 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#c21807] border border-[#1b1b1b]" />
@@ -3503,7 +3602,14 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     </foreignObject>
 
                     {/* Front Blind Spot Tooltip */}
-                    <foreignObject x="30" y="50" width="300" height="200" className="opacity-0 peer-hover/blindF:opacity-100 peer-focus/blindF:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                    <foreignObject
+                      x="30" y="50" width="300" height="300"
+                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                        isTouch
+                          ? activeZone === 'blindF' ? 'opacity-100' : 'opacity-0'
+                          : 'opacity-0 peer-hover/blindF:opacity-100 peer-focus/blindF:opacity-100'
+                      }`}
+                    >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
                         <div className="flex items-center gap-2 mb-1.5">
                           <span className="w-3 h-3 rounded-sm bg-[#e5e5e5] border-[1.5px] border-dashed border-[#1b1b1b]" />
@@ -3514,7 +3620,14 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                     </foreignObject>
 
                     {/* Rear Blind Spot Tooltip */}
-                    <foreignObject x="30" y="380" width="300" height="200" className="opacity-0 peer-hover/blindR:opacity-100 peer-focus/blindR:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                    <foreignObject
+                      x="30" y="380" width="300" height="200"
+                      className={`transition-opacity duration-300 pointer-events-none z-50 ${
+                        isTouch
+                          ? activeZone === 'blindR' ? 'opacity-100' : 'opacity-0'
+                          : 'opacity-0 peer-hover/blindR:opacity-100 peer-focus/blindR:opacity-100'
+                      }`}
+                    >
                       <div className="bg-white/95 backdrop-blur-sm border-[2px] border-[#1b1b1b] rounded-xl p-3 shadow-[4px_4px_0_#1b1b1b]">
                         <div className="flex items-center gap-2 mb-1.5">
                           <span className="w-3 h-3 rounded-sm bg-[#e5e5e5] border-[1.5px] border-dashed border-[#1b1b1b]" />
@@ -3530,16 +3643,16 @@ export function ScrapbookCanvas({ t }: { t: any }) {
                 {/* Technical Legend */}
                 <div className="mt-8 pt-4 border-t-[2px] border-dashed border-[#1b1b1b]/30 grid grid-cols-3 gap-y-3 font-sans text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#1b1b1b]">
                   <span className="flex items-center gap-3">
-                    <span className="w-5 h-4 bg-gradient-to-r from-[#fadb5f] to-[#f59e0b] border border-[#1b1b1b]" /> 
+                    <span className="w-5 h-4 bg-gradient-to-r from-[#fadb5f] to-[#f59e0b] border border-[#1b1b1b]" />
                     {sb.bunnyLens.legendMono}
                   </span>
                   <span className="flex items-center gap-3">
-                    <span className="w-5 h-4 bg-gradient-to-r from-[#f59e0b] to-[#c21807] border border-[#1b1b1b]" /> 
+                    <span className="w-5 h-4 bg-gradient-to-r from-[#f59e0b] to-[#c21807] border border-[#1b1b1b]" />
                     {sb.bunnyLens.legendBino}
                   </span>
                   <span className="flex items-center gap-3">
                     <span className="relative w-5 h-4 border-[2px] border-dashed border-[#1b1b1b] bg-white overflow-hidden">
-                       <span className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#1b1b1b_2px,#1b1b1b_4px)]" />
+                      <span className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#1b1b1b_2px,#1b1b1b_4px)]" />
                     </span>
                     {sb.bunnyLens.legendBlind}
                   </span>

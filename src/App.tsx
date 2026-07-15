@@ -48,9 +48,7 @@ export default function App() {
           initial="initial"
           animate="animate"
           exit="exit"
-          // Dùng flex-col và h-full thay vì absolute inset-0
-          // để nó tuân thủ padding/margin của cha
-          className="flex h-full w-full flex-col pt-16 md:pt-20 overflow-y-auto bg-gray-50"
+          className="flex h-full w-full flex-col pt-16 md:pt-20 overflow-y-auto bg-gray-50 scrollbar-hide"
         >
           {renderContent()}
         </motion.div>
