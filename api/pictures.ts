@@ -12,7 +12,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // 3. Lấy IP người dùng một cách bí mật từ Headers của Vercel
   // Vercel tự động bắt IP của thằng gọi API và nhét vào header này
-  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  // Sửa đoạn lấy IP của mày thành như thế này:
+    let clientIp = (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress || "";
+    // Nếu nó là một list IP (cách nhau bởi dấu phẩy), lấy cái đầu tiên
+    if (clientIp.includes(',')) {
+        clientIp = clientIp.split(',')[0].trim();
+    }
 
   try {
     // 4. GỌI MAXMIND TỪ SERVER (Giấu Key an toàn 100%)
