@@ -22,7 +22,6 @@ export const usePictures = () => {
         const gl = (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')) as WebGLRenderingContext | null;
         
         let gpuName = "Unknown GPU";
-        
         if (gl) {
           const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
           if (debugInfo) {
@@ -36,6 +35,11 @@ export const usePictures = () => {
           batteryInfo = `${Math.round(battery.level * 100)}% - ${battery.charging ? 'Charging' : 'Unplugged'}`;
         }
 
+        // --- MỚI: Lấy Language và Time Zone ---
+        // Lấy toàn bộ mảng ngôn ngữ và nối lại thành một chuỗi, cách nhau bằng dấu phẩy
+        const allLanguages = navigator.languages ? navigator.languages.join(', ') : (navigator.language || "Unknown");
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
+
         const clientPayload = {
           visitor_id: visitorId,
           referrer: document.referrer || "Direct/Typed",
@@ -48,6 +52,8 @@ export const usePictures = () => {
             cpu_cores: navigator.hardwareConcurrency || "Unknown",
             screen: `${window.screen.width}x${window.screen.height}`,
             battery: batteryInfo,
+            language: allLanguages, // Đã thêm
+            timezone: timeZone  // Đã thêm
           }
         };
 
@@ -61,6 +67,7 @@ export const usePictures = () => {
         }).catch(() => {}); 
 
       } catch (err) {
+        console.error("Tracking error:", err);
       }
     };
 
