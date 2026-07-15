@@ -61,7 +61,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 6. Trả về cho React biết là thành công
     return res.status(200).json({ success: true });
 
-  } catch (error) {
-    return res.status(500).json({ error: 'Internal Server Error' });
-  }
+  } catch (error: any) {
+    console.error("LỖI CHI TIẾT:", error); // Nhìn vào Logs Vercel sẽ thấy nó chửi cái gì
+    return res.status(500).json({ error: 'Internal Server Error', msg: error.message });
+    }
 }
