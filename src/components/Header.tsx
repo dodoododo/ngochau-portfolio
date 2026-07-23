@@ -12,10 +12,10 @@ export function Header({ activeTab, setActiveTab }: { activeTab: string, setActi
   // Khai báo lại mảng navItems bị thiếu
   const navItems = [
     { id: "intro", label: t.nav.introduction },
+    { id: "personal", label: t.nav.personal },
     { id: "projects", label: t.nav.projects },
     { id: "skills", label: t.nav.skills },
     { id: "achievements", label: t.nav.achievements },
-    { id: "personal", label: t.nav.personal },
     { id: "contact", label: t.nav.contact },
   ];
 
